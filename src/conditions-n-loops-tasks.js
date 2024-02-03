@@ -141,9 +141,103 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const char = numberStr[i];
+    switch (char) {
+      case ',':
+        result += `point `;
+        result += '';
+        break;
+      case '.':
+        result += `point `;
+        result += '';
+        break;
+      case '-':
+        result += `minus `;
+        result += '';
+        break;
+      case '1':
+        if (i === numberStr.length - 1) {
+          result += 'one';
+        } else {
+          result += `one `;
+        }
+        break;
+      case '2':
+        if (i === numberStr.length - 1) {
+          result += 'two';
+        } else {
+          result += `two `;
+        }
+        break;
+      case '3':
+        if (i === numberStr.length - 1) {
+          result += 'three';
+        } else {
+          result += `three `;
+        }
+        break;
+      case '4':
+        if (i === numberStr.length - 1) {
+          result += 'four';
+        } else {
+          result += `four `;
+        }
+        break;
+      case '5':
+        if (i === numberStr.length - 1) {
+          result += 'five';
+        } else {
+          result += `five `;
+        }
+        break;
+      case '6':
+        if (i === numberStr.length - 1) {
+          result += 'six';
+        } else {
+          result += `six `;
+        }
+        break;
+      case '7':
+        if (i === numberStr.length - 1) {
+          result += 'seven';
+        } else {
+          result += `seven `;
+        }
+        break;
+      case '8':
+        if (i === numberStr.length - 1) {
+          result += 'eight';
+        } else {
+          result += `eight `;
+        }
+        break;
+      case '9':
+        if (i === numberStr.length - 1) {
+          result += 'nine';
+        } else {
+          result += `nine `;
+        }
+        break;
+      case '0':
+        if (i === numberStr.length - 1) {
+          result += 'zero';
+        } else {
+          result += `zero `;
+        }
+        break;
+      default:
+        result += '';
+    }
+  }
+  return result;
 }
+
+// Example usage:
+// Output: "one two three point four five "
+
 /**
  * Determines whether a string is a palindrome.
  * In this task, the use of methods of the String and Array classes is not allowed.
